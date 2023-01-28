@@ -77,7 +77,7 @@ def main():
                     # test variables
                     receiver_name = "firstName_lastName"
                     receiver_discount = "40%"
-                    deadline = "2023-04-24"
+
 
                     st.markdown("-" * 30)
                     st.header("3. 檢視 Word Template")
@@ -104,8 +104,7 @@ def main():
                         info = """
                         變數用\t{ }\t代替,\t例如：\n
                         第一個\t{ }\t用來代替收件人名稱,\n
-                        第二個\t{ }\t代替截止日deadline,\n
-                        第三個\t{ }\t代替收件人折扣
+                        第二個\t{ }\t代替收件人折扣
                         """
                         st.info(info)
                         txt_html = st.text_area("內文內容：",
@@ -118,7 +117,7 @@ def main():
                             st.markdown("##### Subject Line: ")
                             components.html(subject_line.format(receiver_discount), height=60, scrolling=True)
                             st.markdown("##### email 內文: ")
-                            components.html(txt_html.format(receiver_name, deadline, receiver_discount), height=600,
+                            components.html(txt_html.format(receiver_name, receiver_discount), height=600,
                                             scrolling=True)
 
                         if st.button(f"寄 '測試郵件' 至{sender_email}"):
@@ -150,7 +149,7 @@ def main():
 
                                         content["Subject"] = subject_line.format(receiver_discount)
 
-                                        content.attach(MIMEText(txt_html.format(receiver_name, deadline, receiver_discount),
+                                        content.attach(MIMEText(txt_html.format(receiver_name, receiver_discount),
                                                                 'html', 'utf-8'))
 
                                         send_email(send_from=sender_email,
@@ -165,6 +164,7 @@ def main():
                     st.markdown("-" * 100)
                     st.markdown("by BC")
     else:
+        st.write("密碼錯誤")
         st.write("密碼錯誤")
 
 

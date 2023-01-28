@@ -51,8 +51,7 @@ def send_test_email2(some_subjectline, some_html, send_from, send_to, gmail_app_
     content["To"] = receiver_name
     receiver_discount = '50%'
     content["Subject"] = some_subjectline.format(receiver_discount)
-    deadline = "2020-02-20"
-    txt_html = some_html.format(receiver_name, receiver_discount, deadline)
+    txt_html = some_html.format(receiver_name, receiver_discount)
 
     content.attach(MIMEText(txt_html, 'html', 'utf-8'))
 
