@@ -164,8 +164,7 @@ def main():
                     st.markdown("-" * 100)
                     st.markdown("by BC")
     else:
-        st.write("密碼錯誤")
-        st.write("密碼錯誤")
+        st.sidebar.write("請輸入正確密碼")
 
 
 if __name__ == "__main__":
