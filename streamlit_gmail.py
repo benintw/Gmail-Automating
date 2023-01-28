@@ -70,14 +70,13 @@ def main():
                     if not sender_email.endswith("@gmail.com"):
                         st.error("這個不是 Gmail.")
                     if password != correct_password:
-                        st.error("密碼錯誤")
+                        st.error("請輸入正確密碼")
                 else:
                     st.success("###### 密碼正確")
 
                     # test variables
                     receiver_name = "firstName_lastName"
                     receiver_discount = "40%"
-
 
                     st.markdown("-" * 30)
                     st.header("3. 檢視 Word Template")
