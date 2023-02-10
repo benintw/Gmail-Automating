@@ -69,7 +69,7 @@ def main():
                     st.markdown("-" * 30)
                     st.header("2. Gmail 登入")
                     sender_email = st.text_input("請輸入寄件者Gmail: ", value="@gmail.com")
-
+                    cc = st.text_input("請輸入副本收件人 email: ")
                     password = st.text_input("請輸入Gmail 應用程式16位數密碼: ", type='password', help='不是Gmail密碼')
                     correct_password = st.secrets["pw"]
 
@@ -153,7 +153,7 @@ def main():
                                             receiver_discount = df_raw.iloc[idx, 2]
                                             content = MIMEMultipart()
                                             content["To"] = receiver_name
-
+                                            content["Cc"] = cc
                                             content["Subject"] = subject_line.format(receiver_discount)
 
                                             content.attach(MIMEText(txt_html.format(receiver_name, receiver_discount),
