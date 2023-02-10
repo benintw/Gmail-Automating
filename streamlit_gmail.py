@@ -69,7 +69,9 @@ def main():
                     st.markdown("-" * 30)
                     st.header("2. Gmail 登入")
                     sender_email = st.text_input("請輸入寄件者Gmail: ", value="@gmail.com")
-                    cc = st.text_input("請輸入副本收件人 email: ")
+                    cc = []
+                    cc_email = st.text_input("請輸入副本收件人 email: ")
+                    cc.append(cc_email)
                     password = st.text_input("請輸入Gmail 應用程式16位數密碼: ", type='password', help='不是Gmail密碼')
                     correct_password = st.secrets["pw"]
 
@@ -161,7 +163,7 @@ def main():
 
                                             send_email(send_from=sender_email,
                                                     gmail_app_pw=password,
-                                                    send_to=receiver_email,
+                                                    send_to=[receiver_email] + cc,
                                                     content=content)
 
                                         st.write("寄送郵件完成!")

@@ -1,5 +1,5 @@
 '''
-password = 'yapzqipmdivkmyvb'
+
 '''
 
 from email.mime.multipart import MIMEMultipart
