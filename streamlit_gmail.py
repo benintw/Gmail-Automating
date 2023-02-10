@@ -75,11 +75,8 @@ def main():
                     password = st.text_input("請輸入Gmail 應用程式16位數密碼: ", type='password', help='不是Gmail密碼')
                     correct_password = st.secrets["pw"]
 
-                    if not sender_email.endswith("@gmail.com") or password != correct_password:
-                        if not sender_email.endswith("@gmail.com"):
-                            st.error("這個不是 Gmail.")
-                        if password != correct_password:
-                            st.error("請輸入正確密碼")
+                    if  password != correct_password:
+                        st.error("請輸入正確密碼")
                     else:
                         st.success("###### 密碼正確")
 
