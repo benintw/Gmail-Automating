@@ -20,7 +20,7 @@ def main():
 
             df = pd.read_excel(uploaded_excel)
             df_raw = df.copy()
-            df_raw.columns = ["Name", "Email", "Discount"]
+            df_raw.columns = ["Name", "Email", "Discount", "Article"]
 
             null_values = df_raw.isnull().sum().sum()
             repeated_names = df_raw.duplicated(subset=['Name']).sum()
