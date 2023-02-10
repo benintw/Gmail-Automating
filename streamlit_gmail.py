@@ -77,7 +77,7 @@ def main():
 
                     # test variables
                     receiver_name = "firstName_lastName"
-                    receiver_discount = "40%"
+                    receiver_discount = "test%"
 
                     st.markdown("-" * 30)
                     st.header("3. 檢視 Word Template")
@@ -126,7 +126,8 @@ def main():
                                                  some_html=txt_html,
                                                  send_from=sender_email,
                                                  send_to=sender_email,
-                                                 gmail_app_password=password)
+                                                 gmail_app_password=password,
+                                                 receiver_discount=receiver_discount)
 
                             st.success(f"測試郵件已寄送至 {sender_email} !")
 

@@ -33,7 +33,7 @@ def send_email(send_from, gmail_app_pw, send_to, content):
 
 
 @st.cache
-def send_test_email2(some_subjectline, some_html, send_from, send_to, gmail_app_password):
+def send_test_email2(some_subjectline, some_html, send_from, send_to, gmail_app_password, receiver_discount):
     """
     Send test email to sender itself
 
@@ -49,7 +49,7 @@ def send_test_email2(some_subjectline, some_html, send_from, send_to, gmail_app_
     content["From"] = send_from
     receiver_name = 'LA Lakers'
     content["To"] = receiver_name
-    receiver_discount = '50%'
+    # receiver_discount = '50%'
     content["Subject"] = some_subjectline.format(receiver_discount)
     txt_html = some_html.format(receiver_name, receiver_discount)
 
