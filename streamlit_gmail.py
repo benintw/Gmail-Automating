@@ -160,10 +160,10 @@ def main():
 
                                             content.attach(MIMEText(txt_html.format(receiver_name, receiver_discount),
                                                                     'html', 'utf-8'))
-                                            toAddress = [receiver_email] + cc
+                                            # toAddress = [receiver_email] + cc
                                             send_email(send_from=sender_email,
                                                     gmail_app_pw=password,
-                                                    send_to=toAddress,
+                                                    send_to=receiver_email,
                                                     content=content)
 
                                         st.write("寄送郵件完成!")
