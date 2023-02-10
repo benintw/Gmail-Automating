@@ -155,7 +155,7 @@ def main():
                                             receiver_discount = df_raw.iloc[idx, 2]
                                             content = MIMEMultipart()
                                             content["To"] = receiver_name
-                                            content["Cc"] = cc
+                                            content["Cc"] = cc[0]
                                             content["Subject"] = subject_line.format(receiver_discount)
 
                                             content.attach(MIMEText(txt_html.format(receiver_name, receiver_discount),
@@ -163,7 +163,7 @@ def main():
                                             toAddress = [receiver_email] + cc
                                             send_email(send_from=sender_email,
                                                     gmail_app_pw=password,
-                                                    send_to=receiver_email,
+                                                    send_to=toAddress,
                                                     content=content)
 
                                         st.write("寄送郵件完成!")
