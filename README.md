@@ -17,10 +17,10 @@ Once I was aware of this task, i immediately took the initiative to write a emai
 ---
 ## How to use it?
 
-__The input__:
+_The input_:
 - A formatted excel (.xslx)
 - A invitation email template (.docx)
 
-### The output
+_The output_
 - Complete gmails sent to each inviting author.
 
