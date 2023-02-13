@@ -8,11 +8,9 @@
 The purpose of this streamlit app is to send emails to a list of people given a list of contacts.
 
 During my time as a research assistant for this civil engineering professor at NTUT, he had to send out 
-paper invitations to other researchers/professors to contribute to the journal. The number of contactee usually exceeds 100. 
+paper invitations to other researchers/professors to contribute to the journal. The number of contactee usually exceeds 100. It used to take his students two or three afternoons to finish this task. 
 
-It used to take his students two or three afternoons to finish this task. 
-
-To be more specific, each inviting author has a different "discount" value; some are 50% and some are 800 CHF off. 
+The only differences between these emails are "receiver_name" and "receiver_discount" in the subject line and in the body of the email. This is a sign for automating...
 
 Once I was aware of this task, i immediately took the initiative to write a email automating app to speed up the process. 
 
