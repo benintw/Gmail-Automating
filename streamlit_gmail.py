@@ -31,7 +31,9 @@ def main():
                 null_values = df_raw.isnull().sum().sum()
                 # repeated_names = df_raw.duplicated(subset=['Name']).sum()
                 repeated_emails = df_raw.duplicated(subset=['Email']).sum()
-                final_check = null_values + repeated_names + repeated_emails
+                final_check = null_values + repeated_emails
+                            #   repeated_names + 
+                              
 
                 if final_check != 0:
                     if null_values != 0:
