@@ -29,7 +29,7 @@ def main():
                 df_raw.columns = ["Name", "Email", "Discount"]
 
                 null_values = df_raw.isnull().sum().sum()
-                repeated_names = df_raw.duplicated(subset=['Name']).sum()
+                # repeated_names = df_raw.duplicated(subset=['Name']).sum()
                 repeated_emails = df_raw.duplicated(subset=['Email']).sum()
                 final_check = null_values + repeated_names + repeated_emails
 
