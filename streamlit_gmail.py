@@ -38,9 +38,9 @@ def main():
                         print("有缺失值, 請重新檢查 Excel 清單")
                         st.error("有缺失值, 請重新檢查 Excel 清單！")
 
-                    if repeated_names != 0:
-                        print("名字有重複, 請重新檢查 Excel 清單")
-                        st.error("名字有重複, 請重新檢查 Excel 清單！")
+                    # if repeated_names != 0:
+                    #     print("名字有重複, 請重新檢查 Excel 清單")
+                    #     st.error("名字有重複, 請重新檢查 Excel 清單！")
 
                     if repeated_emails != 0:
                         print("Email 有重複, 請重新檢查 Excel 清單")
