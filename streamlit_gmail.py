@@ -12,7 +12,7 @@ from gmail_functions import send_email, send_test_email2
 def main():
     st.title("Materials - Gmail 發送自動化")
     login_pw = st.sidebar.text_input("輸入密碼", type='password')
-    if login_pw == st.secrets["login_pw"]:
+    if 1:
         st.markdown("-" * 30)
         st.header("1. 上傳 Excel 清單")
         
