@@ -62,7 +62,10 @@ def main():
 
                     ### 轉換50% 從 0.5 至 '50%'
                     df_raw["Discount"] = df_raw["Discount"].apply(str)
-                    df_raw["Discount"] = df_raw["Discount"].replace(["0.5"], "50%")
+                    # df_raw["Discount"] = df_raw["Discount"].replace(["0.5"], "50%")
+                    df_raw["Discount"] = df_raw["Discount"].replace({"0.5": "50%",
+                                                                     "1": "100%",
+                                                                     "0.2": "20%"})
 
                     st.dataframe(df_raw)
                     st.write(f"總寄送數量: {length_of_receiver_list} 人")
