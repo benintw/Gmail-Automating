@@ -64,7 +64,7 @@ def main():
                     df_raw["Discount"] = df_raw["Discount"].apply(str)
                     # df_raw["Discount"] = df_raw["Discount"].replace(["0.5"], "50%")
                     df_raw["Discount"] = df_raw["Discount"].replace({"0.5": "50%",
-                                                                     "1": "100%",
+                                                                     "1.0": "100%",
                                                                      "0.2": "20%"})
 
                     st.dataframe(df_raw)
