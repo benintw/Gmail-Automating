@@ -123,7 +123,7 @@ def main():
                     type="password",
                     help="不是Gmail密碼",
                 )
-                correct_password = st.secret[pw]
+                correct_password = st.secret["pw"]
 
                 if password != correct_password:
                     st.error("請輸入正確密碼")
