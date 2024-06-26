@@ -8,6 +8,7 @@ from stqdm import stqdm
 import smtplib
 
 # Utility functions
+# added a comment Jun 27 2024
 
 
 def send_email(send_from, gmail_app_pw, send_to, content):
