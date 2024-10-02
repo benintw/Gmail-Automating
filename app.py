@@ -217,8 +217,7 @@ def main():
                             if proofread and proceed:
                                 st.success("可以開始傳送")
                                 
-                                if st.button("即時終止"):
-                                    break
+
                                 
                                 if st.button(
                                     f"傳送郵件至清單內 {special_num_receivers} 位聯絡人"
@@ -227,6 +226,9 @@ def main():
                                         range(special_num_receivers),
                                         desc="郵件傳送中: ",
                                     ):
+                                        if st.button("即時終止"):
+                                            break
+                                        
                                         receiver_name = special_revised_df.iloc[idx]["Name"]
                                         receiver_email = special_revised_df.iloc[idx]["Email"]
                                         receiver_discount = special_revised_df.iloc[idx]["Discount"]
