@@ -114,6 +114,12 @@ def main():
 
                 st.dataframe(revised_df)
                 st.write(f"總寄送數量: {num_receivers} 人")
+                
+                st.markdown("-" * 30)
+                up_to_and_include = int(st.number_input("要到和包含第幾row?"))
+                special_revised_df = revised_df.iloc[up_to_and_include, :]
+                st.dataframe(special_revised_df)
+                special_num_receivers = len(special_revised_df["Name"])
 
                 st.markdown("-" * 30)
                 st.header("2. Gmail 登入")
@@ -207,17 +213,15 @@ def main():
                             if proofread and proceed:
                                 st.success("可以開始傳送")
                                 if st.button(
-                                    f"傳送郵件至清單內 {num_receivers} 位聯絡人"
+                                    f"傳送郵件至清單內 {special_num_receivers} 位聯絡人"
                                 ):
                                     for idx in stqdm(
-                                        range(num_receivers),
+                                        range(special_num_receivers),
                                         desc="郵件傳送中: ",
                                     ):
-                                        receiver_name = revised_df.iloc[idx]["Name"]
-                                        receiver_email = revised_df.iloc[idx]["Email"]
-                                        receiver_discount = revised_df.iloc[idx][
-                                            "Discount"
-                                        ]
+                                        receiver_name = special_revised_df.iloc[idx]["Name"]
+                                        receiver_email = special_revised_df.iloc[idx]["Email"]
+                                        receiver_discount = special_revised_df.iloc[idx]["Discount"]
                                         data = {
                                             "name": receiver_name,
                                             "discount": receiver_discount,
@@ -241,15 +245,7 @@ def main():
                                         content.attach(
                                             MIMEText(personalized_body, "html", "utf-8")
                                         )
-                                        # content.attach(
-                                        #     MIMEText(
-                                        #         txt_html.format(
-                                        #             receiver_name, receiver_discount
-                                        #         ),
-                                        #         "html",
-                                        #         "utf-8",
-                                        #     )
-                                        # )
+
                                         send_email(
                                             send_from=sender_email,
                                             gmail_app_pw=password,
