@@ -170,8 +170,8 @@ def main():
                             ### For checking purposes
                             idx = 0
                             data = {
-                                "Name": revised_df.iloc[idx]["Name"],
-                                "Discount": revised_df.iloc[idx][
+                                "Name": special_revised_df.iloc[idx]["Name"],
+                                "Discount": special_revised_df.iloc[idx][
                                     "Discount"
                                 ],  # eg. "50%"
                             }
