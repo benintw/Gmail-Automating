@@ -117,9 +117,11 @@ def main():
                 
                 st.markdown("-" * 30)
                 up_to_and_include = int(st.number_input("要到和包含第幾row?"))
-                special_revised_df = revised_df.iloc[up_to_and_include, :]
+                special_revised_df = revised_df.iloc[:up_to_and_include + 1, :]
                 st.dataframe(special_revised_df)
                 special_num_receivers = len(special_revised_df["Name"])
+                
+                st.write(f"special總寄送數量: {special_num_receivers} 人")
 
                 st.markdown("-" * 30)
                 st.header("2. Gmail 登入")
