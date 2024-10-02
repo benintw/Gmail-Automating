@@ -222,12 +222,15 @@ def main():
                                 if st.button(
                                     f"傳送郵件至清單內 {special_num_receivers} 位聯絡人"
                                 ):
+                                    if st.button("即時終止", key="即時終止"):
+                                        break
+                                    
                                     for idx in stqdm(
                                         range(special_num_receivers),
                                         desc="郵件傳送中: ",
                                     ):
 
-                                        if st.button("即時終止", key="即時終止"):
+                                        if st.button("即時終止", key=f"即時終止_{idx}"):
                                             break
                                         
                                         receiver_name = special_revised_df.iloc[idx]["Name"]
