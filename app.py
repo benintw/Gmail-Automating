@@ -226,8 +226,8 @@ def main():
                                         range(special_num_receivers),
                                         desc="郵件傳送中: ",
                                     ):
-                                        stop_button = st.button("即時終止", key="stop_button")
-                                        if stop_button:
+
+                                        if st.button("即時終止", key="即時終止"):
                                             break
                                         
                                         receiver_name = special_revised_df.iloc[idx]["Name"]
