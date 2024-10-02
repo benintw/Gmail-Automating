@@ -226,7 +226,7 @@ def main():
                                         range(special_num_receivers),
                                         desc="郵件傳送中: ",
                                     ):
-                                        stop_button = st.button("即時終止")
+                                        stop_button = st.button("即時終止", key="stop_button")
                                         if stop_button:
                                             break
                                         
