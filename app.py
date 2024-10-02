@@ -13,7 +13,7 @@ import smtplib
 
 def send_email(send_from, gmail_app_pw, send_to, content):
     """Sends an email using SMTP."""
-    with smtplib.SMTP_SLL(host="smtp.gmail.com", port=587) as smtp:
+    with smtplib.SMTP_SSL(host="smtp.gmail.com", port=587) as smtp:
         try:
             smtp.ehlo()
             smtp.starttls()
