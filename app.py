@@ -216,6 +216,10 @@ def main():
                             )
                             if proofread and proceed:
                                 st.success("可以開始傳送")
+                                
+                                if st.button("即時終止"):
+                                    break
+                                
                                 if st.button(
                                     f"傳送郵件至清單內 {special_num_receivers} 位聯絡人"
                                 ):
