@@ -222,8 +222,6 @@ def main():
                                 if st.button(
                                     f"傳送郵件至清單內 {special_num_receivers} 位聯絡人"
                                 ):
-                                    if st.button("即時終止", key="即時終止"):
-                                        break
                                     
                                     for idx in stqdm(
                                         range(special_num_receivers),
